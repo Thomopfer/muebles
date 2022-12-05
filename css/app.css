@@ -17,6 +17,12 @@ body{
     line-height: 2;
 }
 
+/* @media (min-width: 768px) { 
+    body{
+        font-size: 1.6rem;
+    }
+} */
+
 h1, h2, h3{
     font-family: 'Playfair Display', serif;
 }
@@ -32,17 +38,37 @@ a{
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 0;
     text-align: center;
 }
 
+@media (min-width: 768px) { 
+    h1{
+        font-size: 5rem;
+        margin: 0;
+        text-align: center;
+    }
+}
+
 h2{
-    font-size: 4rem;
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) { 
+    h2 {
+        font-size: 4rem;
+    }
 }
 
 h3{
-    font-size: 3rem;
+    font-size: 2.4rem;
+}
+
+@media (min-width: 768px) { 
+    h3{
+        font-size: 3rem;
+    }
 }
 
 .contenedor{
@@ -86,22 +112,37 @@ h3{
     font-weight: bold;
 }
 
+
+
 /* Header y navegacion */
+
+
 
 .nombre-sitio{
     margin: 5rem 0;
 }
 
 .contenedor-principal{
-   border-top:.1rem solid #e1e1e1 ;
+   border-top: .1rem solid #e1e1e1 ;
 
    display: flex;
-   justify-content: space-evenly;
+   flex-direction: column;
    align-items: center;
+}
+
+@media (min-width: 768px) { 
+    .contenedor-principal{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+     }
 }
 
 .contenedor-principal a{
     transition: background-color .3s ease-out;
+
+    display: block;
+    padding:2rem;
 }
 
 .contenedor-principal a:hover{
@@ -114,29 +155,44 @@ h3{
     color: rgb(80, 87, 220);
 }
 
-.contenedor-principal a{
-    display: block;
-    padding:2rem;
-}
 
 .hero{
     background-image: url(../img/principal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 55rem;
     background-position: center center;
+    height: 25rem;
+}
+
+@media (min-width: 768px) { 
+    .hero{
+        height: 55rem;
+    }
 }
 
 /* categorias de productos */
 
-.h2-categorias{
-    margin: 5rem 0;
+.categorias-section{
+    padding: 5rem 0;
 }
 
-.categorias-productos{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.h2-categorias{
+    margin: 0;
+    padding-bottom: 5rem;
+}
+
+.categoria{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .categoria{
+        margin: bottom 0;;
+    }
+}
+
+.categoria img{
+    width: 100%;
 }
 
 .categoria a{
@@ -144,9 +200,23 @@ h3{
     text-align: center;
     padding:2rem 0 ;
     font-size: 2rem;
-
-    border-bottom-right-radius: 1.5rem;
+    
     transition: background-color .3s ease-out;
+}
+
+@media (min-width: 768px) { 
+    .categoria a{
+        border-bottom-right-radius: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) { 
+
+    .categorias-productos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 
 }
 
@@ -163,30 +233,49 @@ h3{
 /* sobre nosotros */
 
 .sobre--nosotros{
-    margin:5rem 0;
-    height: 50rem;
-
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) { 
+    .sobre--nosotros{
+        margin: 0;
+        height: 50rem;
+    
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 .sobre--nosotros img{
-    width: 50%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+@media (min-width: 768px) { 
+    .sobre--nosotros img{
+        width: 50%;
+        height: 100%;
+    }
+}
+
 .nosotros--texto{
     background-color:rgb(80, 87, 220) ;
-    color: white;
-    width: 50%;
-    padding: 0 5rem;
-    padding-left: 2.5rem;
+    color: rgb(255, 255, 255);
+    padding: 2.5rem;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content:center ;
+@media (min-width: 768px) { 
+    .nosotros--texto{
+        width: 50%;
+        padding: 1rem 5rem 2.5rem 2.5rem;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center ;
+    }
 }
 
 .h2-nosotros{
@@ -195,66 +284,80 @@ h3{
 
 /* Lista de Productos */
 
-.h2-productos{
-    margin: 5rem;
-}
-
-.lista-productos{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-}
-
-.producto:nth-child(1) {
-    grid-column: 1 / 7;
-    display: grid;
-    grid-template-columns:3fr 1fr;
-
-}
-
-.producto:nth-child(1) img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.producto:nth-child(2) {
-    grid-column: 1 / 4;
-}
-
-.producto:nth-child(3){
-    grid-column: 4 / 7;
-}
-
-.producto:nth-child(2) img,
-.producto:nth-child(3) img{
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.producto:nth-child(4){
-    grid-column: 1 / 3 ;
-}
-
-.producto:nth-child(5){
-    grid-column: 3 / 5 ;
-}
-
-.producto:nth-child(6){
-    grid-column: 5 / 7 ;
-}
-
-.producto:nth-child(4) img,
-.producto:nth-child(5) img,
-.producto:nth-child(6) img{
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-}
-
 .producto{
     background-color: rgb(80, 87, 220);
+    margin-bottom: 2rem;
+}
+
+.producto:last-of-type{
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) { 
+
+    .lista-productos{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+
+    .producto{
+        background-color: rgb(80, 87, 220);
+        margin-bottom: 0;
+    }
+    
+    .producto:nth-child(1) {
+        grid-column: 1 / 7;
+        display: grid;
+        grid-template-columns:3fr 1fr;
+        align-items: start;
+    }
+    
+    .producto:nth-child(1) img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(2) {
+        grid-column: 1 / 4;
+    }
+    
+    .producto:nth-child(3){
+        grid-column: 4 / 7;
+    }
+    
+    .producto:nth-child(2) img,
+    .producto:nth-child(3) img{
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(4){
+        grid-column: 1 / 3 ;
+    }
+    
+    .producto:nth-child(5){
+        grid-column: 3 / 5 ;
+    }
+    
+    .producto:nth-child(6){
+        grid-column: 5 / 7 ;
+    }
+    
+    .producto:nth-child(4) img,
+    .producto:nth-child(5) img,
+    .producto:nth-child(6) img{
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.h2-productos{
+    padding: 5rem;
+    margin: 0;
 }
 
 .producto__info{
@@ -286,11 +389,35 @@ h3{
 .site-footer h3{
     font-weight: 900;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .site-footer a{
     display: block;
     text-transform: capitalize;
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+
+    .site-footer h3{
+        text-align: left;
+    }
+
+    .site-footer a{
+        text-align: left;
+    }
+}
+
+.footer-grid > div{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .footer-grid > div{
+        margin: 0;
+    }
+    
 }
 
 .site-footer a:hover{
@@ -298,14 +425,27 @@ h3{
 }
 
 .footer-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: start;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) { 
+    .footer-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        justify-items: center;
+    }
 }
 
 .footer__copyright{
-    margin: 5rem 0 2.5rem;
+    margin: 5rem 1rem 2.5rem; 
+}
+
+@media (min-width: 768px) { 
+    .footer__copyright{
+        margin: 5rem 0 2.5rem;
+    }
 }
 
 
@@ -314,11 +454,29 @@ h3{
 
 .contenido-nosotros{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* grid-template-columns: repeat(autofit, minmax( 25rem, 1fr ) ); */
+    grid-template-rows: auto 1fr;
 
-    gap: 4rem;
-    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .contenido-nosotros{
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: none;
+    
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.informacion-nosotros{
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) { 
+    .informacion-nosotros{
+        padding: 0;
+    }
 }
 
 /* Blog */
@@ -402,6 +560,10 @@ fieldset{
 
 .campo label{
     flex-basis: 10rem;
+}
+
+.campo textarea{
+    resize: vertical;
 }
 
 .campo input:not([type="radio"]),
