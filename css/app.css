@@ -398,6 +398,14 @@ h3{
     display: block;
     text-transform: capitalize;
     text-align: center;
+
+    transition-property: transform, color;
+    transition-duration: 300ms;
+}
+
+.site-footer a:hover{
+    color: rgb(80, 87, 220);
+    transform: scale(1.1);
 }
 
 @media (min-width: 768px) { 
@@ -420,10 +428,6 @@ h3{
         margin: 0;
     }
     
-}
-
-.site-footer a:hover{
-    color: rgb(80, 87, 220);
 }
 
 .footer-grid{
