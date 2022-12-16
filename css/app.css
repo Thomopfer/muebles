@@ -130,6 +130,13 @@ h3{
    display: flex;
    flex-direction: column;
    align-items: center;
+
+   width: 100%;
+}
+
+.contenedor-principal__a{
+    width: 100%;
+    text-align: center;
 }
 
 @media (min-width: 768px) { 
